@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)67mlr3g*5*6-3l3be_)#xf7c9dl2pesn3$ngop1cpu%dabqz0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://simplecruddjango-production.up.railway.app/"]
+ALLOWED_HOSTS = ["https://simplecruddjango-production.up.railway.app/","simplecruddjango-production.up.railway.app"]
 
 
 # Application definition
