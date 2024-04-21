@@ -297,7 +297,9 @@
                 type: 'POST',
                 url: "/person/save_person",
                 data: dados,
-                headers: { "X-CSRFToken": getCookie("csrftoken") },
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+                },
                 success: function (response) {
                     if (response.success) {
                         showAlert("success", response.message);
