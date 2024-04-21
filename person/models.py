@@ -6,4 +6,4 @@ class Person(models.Model):
     person_age = models.IntegerField()
 
     def __str__(self):
-        return self.person_name + " " + self.person_last_name
+        return self.person_name
