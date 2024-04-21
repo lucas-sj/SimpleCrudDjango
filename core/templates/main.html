@@ -282,6 +282,7 @@
         }
 
         function savePerson(id, name, lastname, age) {
+            var csrfToken = document.getElementById('my_csrf_token').value;
             if (name === "" || lastName === "" || isNaN(age)) {
                 showAlert("error", "Por favor, preencha todos os campos corretamente.");
                 return;
@@ -297,9 +298,7 @@
                 type: 'POST',
                 url: "/person/save_person",
                 data: dados,
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
-                },
+                headers: { "X-CSRFToken": csrfToken },
                 success: function (response) {
                     if (response.success) {
                         showAlert("success", response.message);
