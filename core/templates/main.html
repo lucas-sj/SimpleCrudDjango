@@ -218,8 +218,12 @@
                     url: `/person/search_person?person=${person}`,
                     contentType: 'application/json',
                     success: function (data) {
-                        $("#resultTable").html(data);
-                        $("#dialog").dialog( "close" );
+                        if(data.success === false){
+                            showAlert("error", data.message)
+                        }else{
+                            $("#resultTable").html(data);
+                            $("#dialog").dialog( "close" );
+                        }
                     },
                     error: function (error) {
                         console.error('Erro:', error);
